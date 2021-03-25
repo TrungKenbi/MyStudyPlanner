@@ -3,4 +3,7 @@
     <string name="username">Tên đăng nhập</string>
     <string name="password">Mật khẩu</string>
     <string name="retype">Nhập lại mật khẩu</string>
+    <string name="logo">App logo</string>
+    <string name="login">Đăng nhập</string>
+    <string name="sign_up">Đăng ký</string>
 </resources>
