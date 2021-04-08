@@ -52,7 +52,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
-                    android:text="Phát triển ứng dụng di động (2+1)"
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
