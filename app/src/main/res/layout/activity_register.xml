@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Register">
+    tools:context="vn.edu.tdmu.msp.Register">
 
     <ImageView
         android:layout_width="300dp"

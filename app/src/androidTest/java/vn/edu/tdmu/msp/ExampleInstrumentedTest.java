@@ -1,4 +1,4 @@
-package com.example.mystudyplanner;
+package vn.edu.tdmu.msp;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.example.mystudyplanner;
+package vn.edu.tdmu.msp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,12 +7,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class Register extends AppCompatActivity implements View.OnClickListener {
     Button btnLogin, btnSignUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
         btnLogin.setOnClickListener(this);
@@ -23,11 +23,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnLogin:
-                intent = new Intent(Login.this, MainActivity.class);
+                intent = new Intent(Register.this, Login.class);
                 startActivity(intent);
                 break;
             case R.id.btnSignUp:
-                intent = new Intent(Login.this, Register.class);
+                intent = new Intent(Register.this, Login.class);
                 startActivity(intent);
                 break;
         }

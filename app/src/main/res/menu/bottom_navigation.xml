@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/btnHome"
-        android:title="Home"
-        android:icon="@drawable/home_24dp" />
-    <item android:id="@+id/btnTimetable"
-        android:title="Timetable"
-        android:icon="@drawable/timetable_24dp" />
-    <item android:id="@+id/btnToDo"
-        android:title="To Do"
-        android:icon="@drawable/todo_24dp" />
-    <item android:id="@+id/btnNotify"
-        android:title="Notification"
-        android:icon="@drawable/notifications_24dp" />
+    <item android:id="@+id/navigation_home"
+        android:title="Trang chủ"
+        android:icon="@drawable/home_24dp"/>
+    <item android:id="@+id/navigation_timetable"
+        android:title="Thời khoá biểu"
+        android:icon="@drawable/today_black_24dp"/>
+    <item android:id="@+id/navigation_notification"
+        android:title="Thông báo"
+        android:icon="@drawable/notifications_24dp"/>
+    <item android:id="@+id/navigation_setting"
+        android:title="Cài đặt"
+        android:icon="@drawable/settings_black_24dp"/>
 </menu>

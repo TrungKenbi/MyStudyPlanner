@@ -1,4 +1,4 @@
-package com.example.mystudyplanner;
+package vn.edu.tdmu.msp;
 
 public class Item {
     String tenMH;
