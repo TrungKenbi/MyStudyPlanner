@@ -1,10 +1,10 @@
 package vn.edu.tdmu.msp;
 
-public class Item {
+public class ItemActivityHome {
     String tenMH;
     String noiDung;
 
-    public Item(String tenMH, String noiDung) {
+    public ItemActivityHome(String tenMH, String noiDung) {
         this.tenMH = tenMH;
         this.noiDung = noiDung;
     }

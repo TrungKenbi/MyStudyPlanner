@@ -1,4 +1,4 @@
-package vn.edu.tdmu.msp;
+package vn.edu.tdmu.msp.fragment;
 
 import android.os.Bundle;
 
@@ -7,6 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import vn.edu.tdmu.msp.ItemActivityHome;
+import vn.edu.tdmu.msp.ItemSubjectTimetable;
+import vn.edu.tdmu.msp.R;
+import vn.edu.tdmu.msp.adapter.MyAdapter;
+import vn.edu.tdmu.msp.adapter.MySubjectTimetableAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +65,27 @@ public class TimetableFragment extends Fragment {
         }
     }
 
+    ListView listSubjectTimetable;
+    List<ItemSubjectTimetable> subjectTimetableList;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_timetable, container, false);
+        super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_timetable, container, false);
+
+        listSubjectTimetable = view.findViewById(R.id.listSubjectTimetable);
+        subjectTimetableList = new ArrayList<>();
+        subjectTimetableList.add(new ItemSubjectTimetable("12:30", "Nhập môn phát triển game (2+1)", "I4.207"));
+        subjectTimetableList.add(new ItemSubjectTimetable("12:31", "Nhập môn phát triển game 2 (2+1)", "I4.207"));
+        subjectTimetableList.add(new ItemSubjectTimetable("12:32", "Nhập môn phát triển game 3 (2+1)", "I4.207"));
+        subjectTimetableList.add(new ItemSubjectTimetable("12:33", "Nhập môn phát triển game 4 (2+1)", "I4.207"));
+        subjectTimetableList.add(new ItemSubjectTimetable("12:34", "Nhập môn phát triển game 5 (2+1)", "I4.207"));
+        subjectTimetableList.add(new ItemSubjectTimetable("12:35", "Nhập môn phát triển game 6 (2+1)", "I4.207"));
+
+        MySubjectTimetableAdapter mySubjectTimetableAdapter = new MySubjectTimetableAdapter(getContext(), R.layout.list_subject_timetable_items, subjectTimetableList);
+        listSubjectTimetable.setAdapter(mySubjectTimetableAdapter);
+
+        return view;
     }
 }

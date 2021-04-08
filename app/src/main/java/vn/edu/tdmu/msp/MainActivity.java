@@ -9,6 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import vn.edu.tdmu.msp.fragment.HomeFragment;
+import vn.edu.tdmu.msp.fragment.NotificationFragment;
+import vn.edu.tdmu.msp.fragment.SettingFragment;
+import vn.edu.tdmu.msp.fragment.TimetableFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private FragmentManager fm;
@@ -18,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         fm = getSupportFragmentManager();
