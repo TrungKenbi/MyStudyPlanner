@@ -33,12 +33,7 @@
                 android:layout_below="@id/tvThu"
                 android:text="Ngày 25 tháng 03 năm 2020" />
 
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="45dp"
-                android:layout_marginLeft="109dp"
-                android:layout_toRightOf="@id/tvNgay"
-                android:background="@drawable/account_circle" />
+
 
         </RelativeLayout>
 

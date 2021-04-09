@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     tools:context="vn.edu.tdmu.msp.fragment.SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="sét ting" />
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/tvNgay"
+            android:background="@drawable/account_circle" />
+    </LinearLayout>
 
 </FrameLayout>
