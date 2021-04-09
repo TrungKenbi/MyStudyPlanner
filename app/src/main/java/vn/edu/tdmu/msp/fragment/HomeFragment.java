@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,7 +107,11 @@ public class HomeFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<TDMUResponse> call, Throwable t) {
-                        Toast.makeText(getActivity(), "Hông có mạng bạn ơi !!!", Toast.LENGTH_LONG).show();
+                        if (t instanceof IOException) {
+                            Toast.makeText(getActivity(), "Hông có mạng bạn ơi !!!", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(getActivity(), "Lỗi khác rồi bây ơiiiii", Toast.LENGTH_SHORT).show();
+                        }
                         Log.d("MainActivity", "error loading from API");
                     }
                 });
