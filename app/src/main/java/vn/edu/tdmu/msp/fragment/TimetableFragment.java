@@ -1,5 +1,6 @@
 package vn.edu.tdmu.msp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,9 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -22,7 +23,6 @@ import vn.edu.tdmu.msp.data.TDMUService;
 import vn.edu.tdmu.msp.data.model.Subject;
 import vn.edu.tdmu.msp.data.model.TDMUResponse;
 import vn.edu.tdmu.msp.utils.ApiUtils;
-import vn.edu.tdmu.msp.utils.DateHelper;
 
 public class TimetableFragment extends Fragment {
 
@@ -31,11 +31,21 @@ public class TimetableFragment extends Fragment {
     ListView lstTimetable;
     List<Subject> timetable;
 
+    Button btnAddSubject;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_timetable, container, false);
+
+        btnAddSubject = view.findViewById(R.id.btnAddSubject);
+        btnAddSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         lstTimetable = view.findViewById(R.id.listSubjectTimetable);
         mService = ApiUtils.getTDMUService();

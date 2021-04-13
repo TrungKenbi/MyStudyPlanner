@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="vn.edu.tdmu.msp.fragment.TimetableFragment"
+    tools:context="vn.edu.tdmu.msp.fragment.ExaminationFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="THỜI KHOÁ BIỂU CỦA BẠN"
+            android:text="LỊCH THI CỦA BẠN"
             android:textSize="20dp"
             android:textStyle="bold"
             android:gravity="center"
@@ -24,9 +24,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
             <ListView
-                android:id="@+id/listSubjectTimetable"
+                android:id="@+id/listExamination"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:divider="@null"
@@ -34,13 +33,6 @@
                 android:layout_marginBottom="57dp"/>
         </LinearLayout>
     </LinearLayout>
-    <Button
-        android:id="@+id/btnAddSubject"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="bottom |right"
-        android:layout_marginBottom="70dp"
-        android:background="@drawable/ic_add_circle_black_24dp" />
+
 
 </FrameLayout>

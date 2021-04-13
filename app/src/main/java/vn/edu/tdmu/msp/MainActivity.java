@@ -10,8 +10,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import vn.edu.tdmu.msp.fragment.HomeFragment;
-import vn.edu.tdmu.msp.fragment.NotificationFragment;
-import vn.edu.tdmu.msp.fragment.SettingFragment;
+import vn.edu.tdmu.msp.fragment.ExaminationFragment;
+import vn.edu.tdmu.msp.fragment.OtherFragment;
 import vn.edu.tdmu.msp.fragment.TimetableFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_notification:
-                        fragment = new NotificationFragment();
+                        fragment = new ExaminationFragment();
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_setting:
-                        fragment = new SettingFragment();
+                        fragment = new OtherFragment();
                         loadFragment(fragment);
                         return true;
                 }
