@@ -11,144 +11,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="10dp">
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/border6"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/user_24dp"
-                android:background="@drawable/border8"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/border7"
-                android:orientation="vertical"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:paddingLeft="10dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/user_24dp" />
-
-                    <TextView
-                        android:id="@+id/txtTenSV"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="Trần Minh Hiếu"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_badge_black_24dp" />
-
-                        <TextView
-                            android:id="@+id/txtMSSV"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="1824801030067"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/room_24px" />
-
-                        <TextView
-                            android:id="@+id/txtLop"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="D18PM01"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/today_black_24dp" />
-
-                        <TextView
-                            android:id="@+id/txtNgaySinh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="12/08/2000"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="5dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_school_black_24dp" />
-
-                    <TextView
-                        android:id="@+id/txtNganh"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="ĐH Kỹ thuật phần mềm"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:text="My Study Planner"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/vllettownhills"
+            android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,7 +33,7 @@
                 android:layout_marginRight="5dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:id="@+id/SuaTT">
+                android:id="@+id/TaiKhoan">
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -172,7 +42,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chỉnh sửa thông tin"
+                    android:text="Tài khoản"
                     android:textStyle="bold"
                     android:textColor="@color/white"/>
             </LinearLayout>
@@ -228,23 +98,45 @@
             <LinearLayout
                 android:layout_width="175dp"
                 android:layout_height="175dp"
-                android:background="@drawable/border11"
+                android:background="@drawable/border12"
                 android:layout_marginLeft="5dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:id="@+id/DangXuat">
+                android:id="@+id/DieuKhoan">
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_logout_black_24dp"
+                    android:src="@drawable/ic_gavel_black_24dp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Đăng xuất"
+                    android:text="Điều khoản"
                     android:textStyle="bold"
                     android:textColor="@color/white"/>
             </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/border11"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:id="@+id/DangXuat">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_logout_black_24dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng xuất"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"/>
         </LinearLayout>
     </LinearLayout>
 

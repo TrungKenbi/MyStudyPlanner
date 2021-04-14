@@ -60,11 +60,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Hoạt động hôm nay của bạn"
+            android:text="Tin tức"
             android:textStyle="bold |italic" />
 
         <ListView
-            android:id="@+id/listActivity"
+            android:id="@+id/listNews"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="60dp"

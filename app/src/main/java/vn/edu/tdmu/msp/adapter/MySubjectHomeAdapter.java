@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-import vn.edu.tdmu.msp.ItemActivityHome;
 import vn.edu.tdmu.msp.ItemSubjectHome;
 import vn.edu.tdmu.msp.R;
 

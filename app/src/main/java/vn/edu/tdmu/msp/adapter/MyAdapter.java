@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,13 +13,13 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-import vn.edu.tdmu.msp.ItemActivityHome;
+import vn.edu.tdmu.msp.ItemNewsHome;
 import vn.edu.tdmu.msp.R;
 
-public class MyAdapter extends ArrayAdapter<ItemActivityHome> {
-    List<ItemActivityHome> activityList;
+public class MyAdapter extends ArrayAdapter<ItemNewsHome> {
+    List<ItemNewsHome> activityList;
 
-    public MyAdapter(@NonNull Context context, int resource, @NonNull List<ItemActivityHome> objects) {
+    public MyAdapter(@NonNull Context context, int resource, @NonNull List<ItemNewsHome> objects) {
         super(context, resource, objects);
         activityList = objects;
     }
@@ -33,11 +34,11 @@ public class MyAdapter extends ArrayAdapter<ItemActivityHome> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        v = inflater.inflate(R.layout.listactivity_items, null);
-        TextView txtTenMonHoc = v.findViewById(R.id.txtTenMonHoc);
+        v = inflater.inflate(R.layout.listnews_items, null);
+        TextView txtTieuDe = v.findViewById(R.id.txtTieuDe);
         TextView txtNoiDung = v.findViewById(R.id.txtNoiDung);
 
-        txtTenMonHoc.setText(activityList.get(position).getTenMH());
+        txtTieuDe.setText(activityList.get(position).getTieuDe());
         txtNoiDung.setText(activityList.get(position).getNoiDung());
         return v;
     }

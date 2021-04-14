@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name="vn.edu.tdmu.msp.MainActivity" />
+        <activity android:name="vn.edu.tdmu.msp.StudentInfo" />
+        <activity android:name="vn.edu.tdmu.msp.StudentMark" />
     </application>
 
 </manifest>

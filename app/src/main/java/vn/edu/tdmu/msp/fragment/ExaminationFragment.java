@@ -12,11 +12,9 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.tdmu.msp.ItemActivityHome;
 import vn.edu.tdmu.msp.ItemExamination;
 import vn.edu.tdmu.msp.R;
 import vn.edu.tdmu.msp.adapter.ExaminationAdapter;
-import vn.edu.tdmu.msp.adapter.MyAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

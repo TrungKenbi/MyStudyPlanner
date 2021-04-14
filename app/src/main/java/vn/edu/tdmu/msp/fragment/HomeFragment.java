@@ -1,6 +1,5 @@
 package vn.edu.tdmu.msp.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,11 +17,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import vn.edu.tdmu.msp.ItemActivityHome;
-import vn.edu.tdmu.msp.ItemSubjectHome;
+import vn.edu.tdmu.msp.ItemNewsHome;
 import vn.edu.tdmu.msp.R;
 import vn.edu.tdmu.msp.adapter.MyAdapter;
-import vn.edu.tdmu.msp.adapter.MySubjectHomeAdapter;
 import vn.edu.tdmu.msp.adapter.TimetableAdapter;
 import vn.edu.tdmu.msp.data.TDMUService;
 import vn.edu.tdmu.msp.data.model.Subject;
@@ -33,7 +30,7 @@ import vn.edu.tdmu.msp.utils.DateHelper;
 public class HomeFragment extends Fragment {
 
     ListView listActivity, listSubjectHome;
-    List<ItemActivityHome> activityList;
+    List<ItemNewsHome> activityList;
 
     private TDMUService mService;
     private TimetableAdapter mAdapter;
@@ -53,14 +50,14 @@ public class HomeFragment extends Fragment {
 
 
         //Load list hoạt động ở trang home
-        listActivity = view.findViewById(R.id.listActivity);
+        listActivity = view.findViewById(R.id.listNews);
         activityList = new ArrayList<>();
-        activityList.add(new ItemActivityHome("Nhập môn phát triển game", "Báo cáo cuối kỳ"));
-        activityList.add(new ItemActivityHome("Nhập môn phát triển game", "Báo cáo cuối kỳ"));
-        activityList.add(new ItemActivityHome("Nhập môn phát triển game", "Báo cáo cuối kỳ"));
-        activityList.add(new ItemActivityHome("Nhập môn phát triển game", "Báo cáo cuối kỳ"));
+        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
+        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
+        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
+        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
 
-        MyAdapter myAdapter = new MyAdapter(getContext(), R.layout.listactivity_items, activityList);
+        MyAdapter myAdapter = new MyAdapter(getContext(), R.layout.listnews_items, activityList);
         listActivity.setAdapter(myAdapter);
 
         return view;
