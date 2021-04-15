@@ -15,15 +15,18 @@
         android:theme="@style/Theme.MyStudyPlanner">
         <activity android:name="vn.edu.tdmu.msp.Register" />
         <activity android:name="vn.edu.tdmu.msp.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name="vn.edu.tdmu.msp.MainActivity" />
         <activity android:name="vn.edu.tdmu.msp.StudentInfo" />
         <activity android:name="vn.edu.tdmu.msp.StudentMarkActivity" />
         <activity android:name="vn.edu.tdmu.msp.NewsActivity" />
+        <activity android:name="vn.edu.tdmu.msp.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
