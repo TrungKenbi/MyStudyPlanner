@@ -131,6 +131,7 @@
                 android:src="@drawable/ic_logout_black_24dp"
                 />
             <TextView
+                android:id="@+id/btnLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đăng xuất"

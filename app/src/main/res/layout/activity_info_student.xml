@@ -94,25 +94,6 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_local_hospital_black_24dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="BV Đa khoa tỉnh Bình Dương"
-                android:layout_gravity="center"
-                android:textSize="16dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/txtHospital"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="20dp"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
                 android:src="@drawable/ic_groups_black_24dp"/>
             <TextView
                 android:layout_width="match_parent"

@@ -14,6 +14,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vn.edu.tdmu.msp.LoginActivity;
 import vn.edu.tdmu.msp.R;
 import vn.edu.tdmu.msp.adapter.ExaminationAdapter;
 import vn.edu.tdmu.msp.data.TDMUService;
@@ -35,7 +36,7 @@ public class ExaminationFragment extends Fragment {
         examinationList = new ArrayList<>();
         mService = ApiUtils.getTDMUService();
 
-        mService.getStudentExam("1824801030067", "hieu123leggo@456")
+        mService.getStudentExam(LoginActivity.USERNAME, LoginActivity.PASSWORD)
                 .enqueue(new Callback<List<Exam>>() {
                     @Override
                     public void onResponse(Call<List<Exam>> call, Response<List<Exam>> response) {

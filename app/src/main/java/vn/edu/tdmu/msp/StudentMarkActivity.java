@@ -34,7 +34,7 @@ public class StudentMarkActivity extends AppCompatActivity {
         listStudentMark = findViewById(R.id.listStudentMark);
         studentMark = new ArrayList<>();
 
-        mService.getStudentMark("1824801030067", "hieu123leggo@456")
+        mService.getStudentMark(LoginActivity.USERNAME, LoginActivity.PASSWORD)
                 .enqueue(new Callback<List<Mark>>() {
                     @Override
                     public void onResponse(Call<List<Mark>> call, Response<List<Mark>> response) {

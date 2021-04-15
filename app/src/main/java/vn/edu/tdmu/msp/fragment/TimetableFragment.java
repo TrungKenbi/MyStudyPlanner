@@ -17,6 +17,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vn.edu.tdmu.msp.LoginActivity;
 import vn.edu.tdmu.msp.R;
 import vn.edu.tdmu.msp.adapter.TimetableAdapter;
 import vn.edu.tdmu.msp.data.TDMUService;
@@ -55,7 +56,7 @@ public class TimetableFragment extends Fragment {
     }
 
     public void loadTimetable() {
-        mService.getStudentInfo("1824801030053")
+        mService.getStudentInfo(LoginActivity.USERNAME)
                 .enqueue(new Callback<TDMUResponse>() {
             @Override
             public void onResponse(Call<TDMUResponse> call, Response<TDMUResponse> response) {
