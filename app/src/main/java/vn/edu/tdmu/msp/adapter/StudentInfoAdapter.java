@@ -39,7 +39,7 @@ public class StudentInfoAdapter extends ArrayAdapter<ItemStudentInfo> {
         TextView txtCode = v.findViewById(R.id.txtStudentCode);
         TextView txtGender = v.findViewById(R.id.txtGender);
         TextView txtDayOfBirth = v.findViewById(R.id.txtDayOfBirth);
-        TextView txtPlaceOfBirth = v.findViewById(R.id.txtHospital);
+        // TextView txtPlaceOfBirth = v.findViewById(R.id.txtHospital);
         TextView txtClass = v.findViewById(R.id.txtClass);
         TextView txtMajor = v.findViewById(R.id.txtMajor);
         TextView txtFaculty = v.findViewById(R.id.txtFaculty);
@@ -48,7 +48,7 @@ public class StudentInfoAdapter extends ArrayAdapter<ItemStudentInfo> {
         txtCode.setText(studenInfo.get(position).getCode());
         txtGender.setText(studenInfo.get(position).getGender());
         txtDayOfBirth.setText(studenInfo.get(position).getDayOfBirth());
-        txtPlaceOfBirth.setText(studenInfo.get(position).getPlaceOfBirth());
+        // txtPlaceOfBirth.setText(studenInfo.get(position).getPlaceOfBirth());
         txtClass.setText(studenInfo.get(position).getStudentClass());
         txtMajor.setText(studenInfo.get(position).getMajor());
         txtFaculty.setText(studenInfo.get(position).getFaculty());

@@ -10,15 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
-import vn.edu.tdmu.msp.ItemExamination;
 import vn.edu.tdmu.msp.R;
+import vn.edu.tdmu.msp.data.model.Exam;
 
-public class ExaminationAdapter extends ArrayAdapter<ItemExamination> {
-    List<ItemExamination> examinationList;
+public class ExaminationAdapter extends ArrayAdapter<Exam> {
+    List<Exam> examinationList;
 
-    public ExaminationAdapter(@NonNull Context context, int resource, @NonNull List<ItemExamination> objects) {
+    public ExaminationAdapter(@NonNull Context context, int resource, @NonNull List<Exam> objects) {
         super(context, resource, objects);
         examinationList = objects;
     }
@@ -41,12 +44,21 @@ public class ExaminationAdapter extends ArrayAdapter<ItemExamination> {
         TextView txtRoom = v.findViewById(R.id.txtPhongHoc);
         TextView txtTimeUp = v.findViewById(R.id.txtTimeUp);
 
-        txtDayOfWeek.setText(examinationList.get(position).getDayOfWeek());
+        Date date;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            date = format.parse(examinationList.get(position).getDay());
+            SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+            txtDayOfWeek.setText(sdf.format(date));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         txtTime.setText(examinationList.get(position).getTime());
-        txtDate.setText(examinationList.get(position).getDate());
-        txtSubject.setText(examinationList.get(position).getSubject());
+        txtDate.setText(examinationList.get(position).getDay());
+        txtSubject.setText(examinationList.get(position).getName());
         txtRoom.setText(examinationList.get(position).getRoom());
-        txtTimeUp.setText(examinationList.get(position).getTimeUp());
+        txtTimeUp.setText(examinationList.get(position).getMinutes()); // Duration mới đúng nha
         return v;
     }
 }
