@@ -1,6 +1,7 @@
 package vn.edu.tdmu.msp.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +13,13 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-import vn.edu.tdmu.msp.ItemStudentMark;
 import vn.edu.tdmu.msp.R;
-import vn.edu.tdmu.msp.data.model.Subject;
-import vn.edu.tdmu.msp.utils.DateHelper;
+import vn.edu.tdmu.msp.data.model.Mark;
 
-public class StudentMarkAdapter extends ArrayAdapter<ItemStudentMark> {
-    private List<ItemStudentMark> studentMark;
+public class StudentMarkAdapter extends ArrayAdapter<Mark> {
+    private List<Mark> studentMark;
 
-    public StudentMarkAdapter(@NonNull Context context, int resource, @NonNull List<ItemStudentMark> objects) {
+    public StudentMarkAdapter(@NonNull Context context, int resource, @NonNull List<Mark> objects) {
         super(context, resource, objects);
         studentMark = objects;
     }
@@ -43,12 +42,22 @@ public class StudentMarkAdapter extends ArrayAdapter<ItemStudentMark> {
         TextView txtStatus = view.findViewById(R.id.txtStatus);
         TextView txtAverageMark = view.findViewById(R.id.txtAverageMark);
 
-        txtSubjectCode.setText(studentMark.get(position).getSubjectCode());
-        txtSubjectName.setText(studentMark.get(position).getSubjectName());
-        txtMiddleMark.setText(studentMark.get(position).getMiddleMark());
-        txtFinalMark.setText(studentMark.get(position).getFinalMark());
-        txtStatus.setText(studentMark.get(position).getStatus());
-        txtAverageMark.setText(studentMark.get(position).getAverageMark());
+        Mark mark = studentMark.get(position);
+
+        txtSubjectCode.setText(mark.getId());
+        txtSubjectName.setText(mark.getName());
+        txtMiddleMark.setText(mark.getmPoint());
+        txtFinalMark.setText(mark.getePoint());
+
+        if (mark.getAvgPoint().equals("Đạt") || Float.valueOf(mark.getAvgPoint()) > 5.0f)
+            txtStatus.setText("Đạt");
+        else if (!mark.getmPoint().equals("") || !mark.getePoint().equals("")) {
+            txtStatus.setText("Không Đạt");
+            txtStatus.setTextColor(Color.RED);
+        }
+
+        if (!mark.getAvgPoint().equals("Đạt"))
+            txtAverageMark.setText(mark.getAvgPoint());
 
         return view;
     }
