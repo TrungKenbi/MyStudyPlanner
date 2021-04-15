@@ -7,6 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import vn.edu.tdmu.msp.NewsActivity;
+import vn.edu.tdmu.msp.data.model.Exam;
 import vn.edu.tdmu.msp.data.model.Mark;
 import vn.edu.tdmu.msp.data.model.News;
 import vn.edu.tdmu.msp.data.model.NewsDetail;
@@ -19,6 +20,9 @@ public interface TDMUService {
 
     @GET("mark")
     Call<List<Mark>> getStudentMark(@Query("student_id") String studentCode, @Query("password") String password);
+
+    @GET("exam")
+    Call<List<Exam>> getStudentExam(@Query("student_id") String studentCode, @Query("password") String password);
 
     @GET("news")
     Call<List<News>> getNews();

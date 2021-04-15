@@ -1,25 +1,30 @@
 package vn.edu.tdmu.msp.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import androidx.fragment.app.Fragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.tdmu.msp.ItemExamination;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import vn.edu.tdmu.msp.R;
 import vn.edu.tdmu.msp.adapter.ExaminationAdapter;
+import vn.edu.tdmu.msp.data.TDMUService;
+import vn.edu.tdmu.msp.data.model.Exam;
+import vn.edu.tdmu.msp.utils.ApiUtils;
 
 public class ExaminationFragment extends Fragment {
 
+    private TDMUService mService;
     ListView listExamination;
-    List<ItemExamination> examinationList;
+    List<Exam> examinationList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,11 +33,22 @@ public class ExaminationFragment extends Fragment {
 
         listExamination = view.findViewById(R.id.listExamination);
         examinationList = new ArrayList<>();
-        examinationList.add(new ItemExamination("Thứ Ba", "14:25", "20/04/2021", "Toán cao cấp A1", "E3.104", "60 phút"));
-        examinationList.add(new ItemExamination("Thứ Tư", "07:15", "28/04/2021", "Quản trị hệ thống", "C2.102", "60 phút"));
-        ExaminationAdapter examinationAdapter = new ExaminationAdapter(getContext(), R.layout.list_examination_items, examinationList);
-        listExamination.setAdapter(examinationAdapter);
+        mService = ApiUtils.getTDMUService();
 
+        mService.getStudentExam("1824801030067", "hieu123leggo@456")
+                .enqueue(new Callback<List<Exam>>() {
+                    @Override
+                    public void onResponse(Call<List<Exam>> call, Response<List<Exam>> response) {
+                        if (response.isSuccessful()) {
+                            examinationList = response.body();
+                            ExaminationAdapter examinationAdapter = new ExaminationAdapter(getContext(), R.layout.list_examination_items, examinationList);
+                            listExamination.setAdapter(examinationAdapter);
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<List<Exam>> call, Throwable t) {
+                    }
+                });
         return view;
     }
 }
