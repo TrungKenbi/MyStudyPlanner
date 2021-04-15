@@ -22,7 +22,7 @@
         </activity>
         <activity android:name="vn.edu.tdmu.msp.MainActivity" />
         <activity android:name="vn.edu.tdmu.msp.StudentInfo" />
-        <activity android:name="vn.edu.tdmu.msp.StudentMark" />
+        <activity android:name="vn.edu.tdmu.msp.StudentMarkActivity" />
         <activity android:name="vn.edu.tdmu.msp.NewsActivity" />
     </application>
 

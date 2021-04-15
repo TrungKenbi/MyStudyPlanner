@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import vn.edu.tdmu.msp.StudentInfo;
 import vn.edu.tdmu.msp.R;
-import vn.edu.tdmu.msp.StudentMark;
+import vn.edu.tdmu.msp.StudentMarkActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,7 +80,7 @@ public class OtherFragment extends Fragment {
         layoutMark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), StudentMark.class);
+                Intent intent = new Intent(getActivity(), StudentMarkActivity.class);
                 startActivity(intent);
             }
         });
