@@ -42,6 +42,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             return false;
         });
+
+        // Demo login
+        edtUsername.getEditText().setText("admin");
+        edtPassword.getEditText().setText("123456");
     }
 
     @Override
