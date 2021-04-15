@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="140dp"
+            android:layout_height="180dp"
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:orientation="vertical">
@@ -113,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đạt"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 android:textColor="#28B463"
                 android:id="@+id/txtStatus"/>
             <TextView

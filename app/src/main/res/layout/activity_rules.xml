@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border5"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="60dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ĐIỀU KHOẢN SỬ DỤNG"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mọi thông tin về tài khoản đều được bảo mật. Dữ liệu được truy xuất từ website dkmh.tdmu.edu.vn và tdmu.edu.vn dựa trên mã số sinh viên và mật khẩu của bạn, do đó bằng việc sử dụng ứng dụng này bạn đã đồng ý cho chúng tôi sử dụng mã số sinh viên của bạn. Ngoài các chức năng của ứng dụng, chúng tôi không có quyền thực hiện các hành động nào khác liên quan đến tài khoản của bạn và các website nói trên."
+        android:layout_marginHorizontal="20dp" />
+</LinearLayout>

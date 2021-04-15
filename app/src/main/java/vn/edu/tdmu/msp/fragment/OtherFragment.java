@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import vn.edu.tdmu.msp.PopUpClass;
 import vn.edu.tdmu.msp.StudentInfo;
 import vn.edu.tdmu.msp.R;
 import vn.edu.tdmu.msp.StudentMarkActivity;
@@ -68,6 +69,8 @@ public class OtherFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_other, container, false);
         LinearLayout layoutInfo = (LinearLayout) v.findViewById(R.id.TaiKhoan);
         LinearLayout layoutMark = (LinearLayout) v.findViewById(R.id.XemDiem);
+        LinearLayout layoutInfor = (LinearLayout) v.findViewById(R.id.ThongTin);
+        LinearLayout layoutRules = (LinearLayout) v.findViewById(R.id.DieuKhoan);
 
         layoutInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +87,23 @@ public class OtherFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        layoutInfor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUpClass popUpClass = new PopUpClass();
+                popUpClass.showPopupWindow(v);
+            }
+        });
+
+        layoutRules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUpClass popUpClass = new PopUpClass();
+                popUpClass.showPopupWindowRules(v);
+            }
+        });
+
         return v;
     }
 
