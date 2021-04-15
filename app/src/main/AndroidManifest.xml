@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyStudyPlanner">
         <activity android:name="vn.edu.tdmu.msp.Register" />
-        <activity android:name="vn.edu.tdmu.msp.Login">
+        <activity android:name="vn.edu.tdmu.msp.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,6 +23,7 @@
         <activity android:name="vn.edu.tdmu.msp.MainActivity" />
         <activity android:name="vn.edu.tdmu.msp.StudentInfo" />
         <activity android:name="vn.edu.tdmu.msp.StudentMark" />
+        <activity android:name="vn.edu.tdmu.msp.NewsActivity" />
     </application>
 
 </manifest>

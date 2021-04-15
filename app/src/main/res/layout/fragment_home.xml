@@ -22,7 +22,6 @@
                 android:id="@+id/tvThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thứ Năm"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -30,8 +29,7 @@
                 android:id="@+id/tvNgay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvThu"
-                android:text="Ngày 25 tháng 03 năm 2020" />
+                android:layout_below="@id/tvThu" />
 
 
 

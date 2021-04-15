@@ -41,10 +41,12 @@ public class TimetableAdapter extends ArrayAdapter<Subject> {
         TextView txtTime = view.findViewById(R.id.txtTime);
         TextView txtSubjectName = view.findViewById(R.id.txtTenMonHoc);
         TextView txtRoom = view.findViewById(R.id.txtPhongHoc);
+        TextView txtDate = view.findViewById(R.id.txtDate);
 
         txtTime.setText(DateHelper.getDayAsText(timetable.get(position).getTimeStart()));
         txtSubjectName.setText(timetable.get(position).getSubjectName());
         txtRoom.setText(timetable.get(position).getRoomName());
+        txtDate.setText(timetable.get(position).getDayOfWeekVi());
         return view;
     }
 

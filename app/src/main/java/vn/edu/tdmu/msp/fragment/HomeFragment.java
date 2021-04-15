@@ -1,27 +1,32 @@
 package vn.edu.tdmu.msp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import vn.edu.tdmu.msp.ItemNewsHome;
+import vn.edu.tdmu.msp.NewsActivity;
 import vn.edu.tdmu.msp.R;
-import vn.edu.tdmu.msp.adapter.MyAdapter;
+import vn.edu.tdmu.msp.adapter.NewsAdapter;
 import vn.edu.tdmu.msp.adapter.TimetableAdapter;
 import vn.edu.tdmu.msp.data.TDMUService;
+import vn.edu.tdmu.msp.data.model.News;
 import vn.edu.tdmu.msp.data.model.Subject;
 import vn.edu.tdmu.msp.data.model.TDMUResponse;
 import vn.edu.tdmu.msp.utils.ApiUtils;
@@ -30,7 +35,7 @@ import vn.edu.tdmu.msp.utils.DateHelper;
 public class HomeFragment extends Fragment {
 
     ListView listActivity, listSubjectHome;
-    List<ItemNewsHome> activityList;
+    List<News> listNews;
 
     private TDMUService mService;
     private TimetableAdapter mAdapter;
@@ -42,6 +47,18 @@ public class HomeFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        // Load thời gian
+        TextView txtThu = view.findViewById(R.id.tvThu);
+        TextView txtNgay = view.findViewById(R.id.tvNgay);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        String dayOfTheWeek = sdf.format(d);
+        txtThu.setText(dayOfTheWeek);
+        sdf = new SimpleDateFormat("'Ngày' dd 'tháng' MM 'năm' yyyy");
+        txtNgay.setText(sdf.format(d));
+
+
         //Load list môn học ở trang home
         listSubjectHome = view.findViewById(R.id.listSubjectHome);
 
@@ -51,15 +68,39 @@ public class HomeFragment extends Fragment {
 
         //Load list hoạt động ở trang home
         listActivity = view.findViewById(R.id.listNews);
-        activityList = new ArrayList<>();
-        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
-        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
-        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
-        activityList.add(new ItemNewsHome("Chúc mừng Tết cổ truyền nước CHDNND Lào - Tết BunmiPay", "Ngày 10/04/2021 vừa qua, trường Đại học Thử dầu Một"));
+        listNews = new ArrayList<>();
 
-        MyAdapter myAdapter = new MyAdapter(getContext(), R.layout.listnews_items, activityList);
-        listActivity.setAdapter(myAdapter);
 
+        mService.getNews()
+                .enqueue(new Callback<List<News>>() {
+                    @Override
+                    public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                        if (response.isSuccessful()) {
+                            listNews = response.body();
+                            NewsAdapter newsAdapter = new NewsAdapter(getContext(), R.layout.listnews_items, listNews);
+                            listActivity.setAdapter(newsAdapter);
+
+                            listActivity.setOnItemClickListener((parent, v, position, id) -> {
+                                Intent intent = new Intent(getActivity(), NewsActivity.class);
+
+                                intent.putExtra("cat", listNews.get(position).getCatName());
+                                intent.putExtra("id", listNews.get(position).getIdName());
+
+                                intent.putExtra("title", listNews.get(position).getName());
+                                intent.putExtra("content", listNews.get(position).getDesc());
+                                intent.putExtra("viewer", listNews.get(position).getView());
+                                intent.putExtra("date", listNews.get(position).getTime());
+                                intent.putExtra("imageLink", listNews.get(position).getImg());
+
+                                startActivity(intent);
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<News>> call, Throwable t) {
+                    }
+                });
         return view;
     }
 
