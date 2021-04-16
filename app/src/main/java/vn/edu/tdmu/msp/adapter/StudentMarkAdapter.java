@@ -2,6 +2,7 @@ package vn.edu.tdmu.msp.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,11 +50,15 @@ public class StudentMarkAdapter extends ArrayAdapter<Mark> {
         txtMiddleMark.setText(mark.getmPoint());
         txtFinalMark.setText(mark.getePoint());
 
-        if (mark.getAvgPoint().equals("Đạt") || Float.valueOf(mark.getAvgPoint()) > 5.0f)
-            txtStatus.setText("Đạt");
-        else if (!mark.getmPoint().equals("") || !mark.getePoint().equals("")) {
-            txtStatus.setText("Không Đạt");
-            txtStatus.setTextColor(Color.RED);
+        try {
+            if (mark.getAvgPoint().equals("Đạt") || Float.valueOf(mark.getAvgPoint()) > 5.0f)
+                txtStatus.setText("Đạt");
+            else if (!mark.getmPoint().equals("") || !mark.getePoint().equals("")) {
+                txtStatus.setText("Không Đạt");
+                txtStatus.setTextColor(Color.RED);
+            }
+        } catch (NumberFormatException ex) {
+            txtStatus.setText("");
         }
 
         if (!mark.getAvgPoint().equals("Đạt"))

@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="v.0.0.1"
+            android:text="v1.0.0"
             android:gravity="right"
             android:textSize="16dp"
             android:layout_marginLeft="5dp" />
@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phước Trung | Minh Hiếu"
+            android:text="Phước Trung và Minh Hiếu"
             android:gravity="right"
             android:textSize="16dp"
             android:layout_marginLeft="5dp" />
